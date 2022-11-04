@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import wallpaper from './assets/images/wallpaper.webp'
+import {Ionicons} from "@expo/vector-icons"
 
 export default function App() {
   return (
     <ImageBackground source={wallpaper} style={styles.container}>
-      <Text>Open up App.js to start da on your app!</Text>
-      <Text>Open up App.js to sart da on your app!</Text>
-
+      <View style={styles.header}>
+      <Ionicons name='ios-lock-closed' size={20} color="white" />
+      <Text style={styles.date}>Friday 30 September</Text>
+      <Text style={styles.time}>15:26</Text>
+      </View>
       <StatusBar style="auto" />
     </ImageBackground>
   );
@@ -17,6 +20,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
+  header: {
+    alignItems:'center',
+    justifyContent:'center',
+    height: 250
+  },
+  date: {
+    fontSize:20,
+    fontWeight: '500',
+    color:'#C3FFFE',
+    marginTop:20
+  },
+  time: {
+    fontSize:82,
+    fontWeight: 'bold',
+    color:'#C3FFFE'
+  }
 });
